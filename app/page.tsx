@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { DayBoundPreview } from "./product-previews";
+import { AppScreenshot, DayBoundPreview } from "./product-previews";
 import { SiteFooter, SiteHeader, sitePath } from "./site-chrome";
 
 export const metadata: Metadata = {
@@ -31,7 +31,7 @@ export default function DayBoundPage() {
             </div>
             <div className="trust-row" aria-label="Product highlights"><span>Native for iPhone & iPad</span><span>Guest mode included</span><span>Privacy-minded</span></div>
           </div>
-          <div className="hero-visual reveal delay-1"><DayBoundPreview variant="today" /></div>
+          <div className="hero-visual reveal delay-1"><AppScreenshot product="daybound" /></div>
         </section>
 
         <section className="statement-band">

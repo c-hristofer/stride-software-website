@@ -1,7 +1,26 @@
+import { sitePath } from "./site-chrome";
+
 const Status = () => <div className="phone-status"><span>9:41</span><span>● ◔ ▰</span></div>;
 const Tabs = ({ active, strength = false }: { active: string; strength?: boolean }) => (
   <div className="app-tabs">{(strength ? ["Session", "Planner", "Track", "Coach"] : ["Trips", "Plan", "Today", "Profile"]).map((tab) => <span className={active === tab ? "selected" : ""} key={tab}><b>{tab === "Trips" ? "⌁" : tab === "Plan" ? "＋" : tab === "Today" ? "☀" : tab === "Profile" ? "○" : tab === "Session" ? "↟" : tab === "Planner" ? "▤" : tab === "Track" ? "⌁" : "✦"}</b>{tab}</span>)}</div>
 );
+
+export function AppScreenshot({ product }: { product: "daybound" | "strengthplan" }) {
+  const isDayBound = product === "daybound";
+  return (
+    <figure className={`app-screenshot ${isDayBound ? "daybound-shot" : "strength-shot"}`}>
+      <div className="screenshot-frame">
+        <img
+          src={sitePath(isDayBound ? "/daybound-screen.png" : "/strengthplan-screen.png")}
+          alt={isDayBound ? "DayBound app screen showing a Barcelona day itinerary" : "StrengthPlan app screen showing a lower strength workout"}
+          width={1080}
+          height={2160}
+        />
+      </div>
+      <figcaption>{isDayBound ? "DayBound · Today view" : "StrengthPlan · Session view"}</figcaption>
+    </figure>
+  );
+}
 
 export function DayBoundPreview({ variant, compact = false }: { variant: "plan" | "itinerary" | "today"; compact?: boolean }) {
   return (

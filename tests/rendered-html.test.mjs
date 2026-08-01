@@ -23,6 +23,7 @@ test("server-renders the DayBound page", async () => {
   assert.match(html, /<title>DayBound — Calm, practical trip planning/);
   assert.match(html, /Plan the trip/);
   assert.match(html, /Barcelona, Spain/);
+  assert.match(html, /daybound-screen\.png/);
   assert.match(html, /StrengthPlan/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
 });
@@ -37,6 +38,7 @@ test("renders the two product routes with product-specific content", async () =>
   const strengthHtml = await strengthResponse.text();
   const contactHtml = await contactResponse.text();
   assert.match(strengthHtml, /StrengthPlan/);
+  assert.match(strengthHtml, /strengthplan-screen\.png/);
   assert.match(strengthHtml, /Apple Watch/);
   assert.match(contactHtml, /Contact Stride Software/);
   assert.match(contactHtml, /christoferpiedra2001@gmail.com/);

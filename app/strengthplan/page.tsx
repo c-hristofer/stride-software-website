@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { StrengthPreview } from "../product-previews";
+import { AppScreenshot, StrengthPreview } from "../product-previews";
 import { SiteFooter, SiteHeader, sitePath } from "../site-chrome";
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export default function StrengthPlanPage() {
             <div className="hero-actions"><a className="button button-purple" href="#flow">Explore the flow <span aria-hidden="true">↓</span></a><Link className="text-link light-link" href={sitePath("/contact")}>Get in touch <span aria-hidden="true">↗</span></Link></div>
             <div className="trust-row dark-trust"><span>iPhone + Apple Watch</span><span>Apple Health optional</span><span>Works through interruptions</span></div>
           </div>
-          <div className="hero-visual reveal delay-1"><StrengthPreview variant="session" /></div>
+          <div className="hero-visual reveal delay-1"><AppScreenshot product="strengthplan" /></div>
         </section>
 
         <section className="strength-statement"><div className="shell"><p className="eyebrow purple">Built for consistency</p><h2>Know what to do.<br /><em>See what you’ve done.</em></h2><div className="strength-statements"><p>Reusable strength, interval, cardio, and swimming sessions.</p><p>One-to-eight-week schedules that flex when your plans change.</p><p>Live tracking on iPhone with eligible sessions on Apple Watch.</p></div></div></section>
