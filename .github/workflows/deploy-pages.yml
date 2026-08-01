@@ -41,6 +41,9 @@ jobs:
           NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
         run: node scripts/prepare-pages.mjs
 
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
       - name: Add GitHub Pages marker
         run: touch dist/client/.nojekyll
 
