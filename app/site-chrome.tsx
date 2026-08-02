@@ -38,7 +38,7 @@ export function SiteFooter() {
       <div className="shell footer-main">
         <div><Link className="brand footer-brand" href={siteRoute("/")}><span className="brand-mark" aria-hidden="true">S</span><span>STRIDE <small>SOFTWARE</small></span></Link><p>Small software. Meaningful momentum.</p></div>
         <div className="footer-products"><span>PRODUCTS</span><Link href={siteRoute("/daybound")}>DayBound</Link><Link href={siteRoute("/strengthplan")}>StrengthPlan</Link></div>
-        <div className="footer-products"><span>COMPANY</span><Link href={siteRoute("/")}>Contact</Link><a href="mailto:christoferpiedra2001@gmail.com">Email us</a></div>
+        <div className="footer-products"><span>COMPANY</span><Link href={siteRoute("/")}>Contact</Link><a href="mailto:info@stride-software.info">Email us</a></div>
       </div>
       <div className="shell footer-bottom"><span>© 2026 Stride Software LLC</span><span>Built with care in New York.</span></div>
     </footer>

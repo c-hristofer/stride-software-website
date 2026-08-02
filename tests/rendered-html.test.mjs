@@ -22,7 +22,7 @@ test("server-renders the Contact home page", async () => {
   const html = await response.text();
   assert.match(html, /<title>Contact Stride Software/);
   assert.match(html, /Contact Stride Software/);
-  assert.match(html, /christoferpiedra2001@gmail.com/);
+  assert.match(html, /info@stride-software\.info/);
   assert.match(html, /StrengthPlan/);
   assert.match(html, /href="\/#daybound"/);
   assert.match(html, /href="\/#strengthplan"/);
@@ -48,7 +48,7 @@ test("renders the two product routes with product-specific content", async () =>
   assert.match(strengthHtml, /strengthplan-screen\.png/);
   assert.match(strengthHtml, /Apple Watch/);
   assert.match(contactHtml, /Contact Stride Software/);
-  assert.match(contactHtml, /christoferpiedra2001@gmail.com/);
+  assert.match(contactHtml, /info@stride-software\.info/);
 });
 
 test("static export contains every GitHub Pages entry point", async () => {
