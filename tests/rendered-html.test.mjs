@@ -14,29 +14,33 @@ async function render(pathname = "/") {
   );
 }
 
-test("server-renders the DayBound page", async () => {
+test("server-renders the Contact home page", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>DayBound — Calm, practical trip planning/);
-  assert.match(html, /Plan the trip/);
-  assert.match(html, /Barcelona, Spain/);
-  assert.match(html, /daybound-screen\.png/);
+  assert.match(html, /<title>Contact Stride Software/);
+  assert.match(html, /Contact Stride Software/);
+  assert.match(html, /christoferpiedra2001@gmail.com/);
   assert.match(html, /StrengthPlan/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
 });
 
 test("renders the two product routes with product-specific content", async () => {
-  const [strengthResponse, contactResponse] = await Promise.all([
+  const [dayboundResponse, strengthResponse, contactResponse] = await Promise.all([
+    render("/daybound/"),
     render("/strengthplan/"),
     render("/contact/"),
   ]);
+  assert.equal(dayboundResponse.status, 200);
   assert.equal(strengthResponse.status, 200);
   assert.equal(contactResponse.status, 200);
+  const dayboundHtml = await dayboundResponse.text();
   const strengthHtml = await strengthResponse.text();
   const contactHtml = await contactResponse.text();
+  assert.match(dayboundHtml, /DayBound — Calm, practical trip planning/);
+  assert.match(dayboundHtml, /daybound-screen\.png/);
   assert.match(strengthHtml, /StrengthPlan/);
   assert.match(strengthHtml, /strengthplan-screen\.png/);
   assert.match(strengthHtml, /Apple Watch/);
@@ -45,7 +49,7 @@ test("renders the two product routes with product-specific content", async () =>
 });
 
 test("static export contains every GitHub Pages entry point", async () => {
-  for (const file of ["index.html", "contact/index.html", "strengthplan/index.html", "404.html"]) {
+  for (const file of ["index.html", "daybound/index.html", "contact/index.html", "strengthplan/index.html", "404.html"]) {
     await access(new URL(`../dist/client/${file}`, import.meta.url));
   }
   const workflow = await readFile(new URL("../.github/workflows/deploy-pages.yml", import.meta.url), "utf8");

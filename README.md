@@ -4,9 +4,10 @@ Marketing site for Stride Software LLC and its products, DayBound and StrengthPl
 
 ## Pages
 
-- `/` — DayBound
+- `/` — contact and support details
+- `/daybound` — DayBound
 - `/strengthplan` — StrengthPlan
-- `/contact` — contact and support details
+- `/contact` — contact and support alias
 
 ## Local development
 

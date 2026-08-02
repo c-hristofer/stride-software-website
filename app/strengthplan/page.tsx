@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { AppScreenshot, StrengthPreview } from "../product-previews";
+import { Icon } from "../icons";
 import { SiteFooter, SiteHeader, sitePath } from "../site-chrome";
 
 export const metadata: Metadata = {
@@ -19,7 +20,7 @@ export default function StrengthPlanPage() {
             <p className="eyebrow purple">Plan. Train. Progress.</p>
             <h1>Your training,<br /><em>finally in rhythm.</em></h1>
             <p className="hero-lede">StrengthPlan brings flexible schedules, focused workout tracking, and meaningful progress into one native training companion.</p>
-            <div className="hero-actions"><a className="button button-purple" href="#flow">Explore the flow <span aria-hidden="true">↓</span></a><Link className="text-link light-link" href={sitePath("/contact")}>Get in touch <span aria-hidden="true">↗</span></Link></div>
+            <div className="hero-actions"><a className="button button-purple" href="#flow">Explore the flow <Icon name="arrow-down" /></a><Link className="text-link light-link" href={sitePath("/")}>Get in touch <Icon name="arrow-up-right" /></Link></div>
             <div className="trust-row dark-trust"><span>iPhone + Apple Watch</span><span>Apple Health optional</span><span>Works through interruptions</span></div>
           </div>
           <div className="hero-visual reveal delay-1"><AppScreenshot product="strengthplan" /></div>
@@ -36,7 +37,7 @@ export default function StrengthPlanPage() {
 
         <section className="watch-band"><div className="shell watch-grid"><div className="watch-mock"><div className="watch-crown"></div><div className="watch-screen"><small>LOWER STRENGTH</small><strong>Back Squat</strong><span>SET 2 OF 4</span><b>04:18</b><div><i>Pause</i><i>Finish</i></div></div></div><div><p className="eyebrow purple">On your wrist</p><h2>Start on iPhone.<br />Train on Apple Watch.</h2><p>Keep the current activity, elapsed time, workout phase, and controls available when your phone is not where your focus should be.</p></div></div></section>
 
-        <section className="shell strength-cta"><img src={sitePath("/strengthplan-icon.png")} alt="StrengthPlan app icon" width={150} height={150}/><div><p className="eyebrow purple">StrengthPlan</p><h2>Build a plan you can keep.</h2><p>Native workout planning and tracking, designed to help effort turn into momentum.</p></div><Link className="button button-purple" href={sitePath("/contact")}>Ask about StrengthPlan <span aria-hidden="true">→</span></Link></section>
+        <section className="shell strength-cta"><img src={sitePath("/strengthplan-icon.png")} alt="StrengthPlan app icon" width={150} height={150}/><div><p className="eyebrow purple">StrengthPlan</p><h2>Build a plan you can keep.</h2><p>Native workout planning and tracking, designed to help effort turn into momentum.</p></div><Link className="button button-purple" href={sitePath("/")}>Ask about StrengthPlan <Icon name="arrow-right" /></Link></section>
       </main>
       <SiteFooter />
     </div>
