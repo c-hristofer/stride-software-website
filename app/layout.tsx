@@ -7,7 +7,7 @@ const display = Playfair_Display({ variable: "--font-display", subsets: ["latin"
 
 export const dynamic = "force-static";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://c-hristofer.github.io/stride-software-website";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://stride-software.info";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

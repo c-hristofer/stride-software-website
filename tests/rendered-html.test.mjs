@@ -24,6 +24,9 @@ test("server-renders the Contact home page", async () => {
   assert.match(html, /Contact Stride Software/);
   assert.match(html, /christoferpiedra2001@gmail.com/);
   assert.match(html, /StrengthPlan/);
+  assert.match(html, /href="\/#daybound"/);
+  assert.match(html, /href="\/#strengthplan"/);
+  assert.doesNotMatch(html, /href="\/stride-software-website\/assets\//);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
 });
 
@@ -49,7 +52,7 @@ test("renders the two product routes with product-specific content", async () =>
 });
 
 test("static export contains every GitHub Pages entry point", async () => {
-  for (const file of ["index.html", "daybound/index.html", "contact/index.html", "strengthplan/index.html", "404.html"]) {
+  for (const file of ["index.html", "daybound/index.html", "contact/index.html", "strengthplan/index.html", "404.html", "CNAME"]) {
     await access(new URL(`../dist/client/${file}`, import.meta.url));
   }
   const workflow = await readFile(new URL("../.github/workflows/deploy-pages.yml", import.meta.url), "utf8");
