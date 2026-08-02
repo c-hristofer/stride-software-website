@@ -24,8 +24,8 @@ test("server-renders the Contact home page", async () => {
   assert.match(html, /Contact Stride Software/);
   assert.match(html, /info@stride-software\.info/);
   assert.match(html, /StrengthPlan/);
-  assert.match(html, /href="\/#daybound"/);
-  assert.match(html, /href="\/#strengthplan"/);
+  assert.match(html, /href="\/daybound\/"/);
+  assert.match(html, /href="\/strengthplan\/"/);
   assert.doesNotMatch(html, /href="\/stride-software-website\/assets\//);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
 });

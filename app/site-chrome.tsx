@@ -7,14 +7,11 @@ export function sitePath(path: string) {
   return `${basePath}${path || "/"}` || "/";
 }
 
-/**
- * The canonical site is a single document. Keep the hash in the URL so each
- * product still feels like its own page while GitHub Pages only needs to
- * serve one entry point on the custom domain.
- */
+/** Build a deploy-safe internal route, including the trailing slash GitHub Pages expects. */
 export function siteRoute(path: string) {
-  const page = path === "/" || path === "/contact" ? "" : path.replace(/^\//, "").replace(/\/$/, "");
-  return `${sitePath("/")}${page ? `#${page}` : ""}`;
+  if (path === "/") return sitePath("/");
+  const route = `${path.replace(/\/+$/, "")}/`;
+  return sitePath(route);
 }
 
 export function SiteHeader({ active }: { active: "daybound" | "strengthplan" | "contact" }) {

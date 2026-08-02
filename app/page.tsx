@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import SinglePageSite from "./single-page-site";
+import ContactView from "./contact-view";
 
 export const metadata: Metadata = {
   title: "Contact Stride Software",
@@ -7,5 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  return <SinglePageSite />;
+  return <ContactView />;
 }

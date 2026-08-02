@@ -4,13 +4,12 @@ Marketing site for Stride Software LLC and its products, DayBound and StrengthPl
 
 ## Pages
 
-The deployed site is technically one document. The header and product cards use hash routes so the experience still feels multi-page without asking GitHub Pages to resolve client-side paths:
+The deployed site uses separate static pages with regular links:
 
 - `/` — contact and support details
-- `/#daybound` — DayBound
-- `/#strengthplan` — StrengthPlan
-
-Static `/daybound`, `/strengthplan`, and `/contact` entry points remain as direct-link aliases.
+- `/daybound/` — DayBound
+- `/strengthplan/` — StrengthPlan
+- `/contact/` — contact and support alias
 
 ## Local development
 
