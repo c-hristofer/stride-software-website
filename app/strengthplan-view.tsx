@@ -14,6 +14,7 @@ export default function StrengthPlanView() {
         <section className="watch-band"><div className="shell watch-grid"><div className="watch-mock"><div className="watch-crown"></div><div className="watch-screen"><small>LOWER STRENGTH</small><strong>Back Squat</strong><span>SET 2 OF 4</span><b>04:18</b><div><i>Pause</i><i>Finish</i></div></div></div><div><p className="eyebrow purple">On your wrist</p><h2>Start on iPhone.<br />Train on Apple Watch.</h2><p>Keep the current activity, elapsed time, workout phase, and controls available when your phone is not where your focus should be.</p></div></div></section>
         <section className="shell strength-cta"><img src={sitePath("/strengthplan-icon.png")} alt="StrengthPlan app icon" width={150} height={150}/><div><p className="eyebrow purple">StrengthPlan</p><h2>Build a plan you can keep.</h2><p>Native workout planning and tracking, designed to help effort turn into momentum.</p></div><Link className="button button-purple" href={siteRoute("/")}>Ask about StrengthPlan <Icon name="arrow-right" /></Link></section>
       </main>
+      <div className="shell product-legal strength-product-legal"><Link href={siteRoute("/strengthplan/privacy-policy")}>Privacy Policy</Link></div>
       <SiteFooter />
     </div>
   );

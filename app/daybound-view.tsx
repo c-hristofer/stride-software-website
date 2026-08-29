@@ -38,6 +38,7 @@ export default function DayBoundView() {
         <section className="shell feature-list">{features.map(([title, body], index) => <article key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{body}</p></article>)}</section>
         <section className="next-product shell"><div><p className="eyebrow">Also from Stride Software</p><h2>Meet StrengthPlan.</h2><p>A focused training companion for planning workouts, tracking sessions, and seeing progress add up.</p><Link className="button button-purple" href={siteRoute("/strengthplan")}>Explore StrengthPlan <Icon name="arrow-right" /></Link></div><img className="next-icon" src={sitePath("/strengthplan-icon.png")} alt="StrengthPlan app icon" width={220} height={220} /></section>
       </main>
+      <div className="shell product-legal"><Link href={siteRoute("/daybound/privacy-policy")}>Privacy Policy</Link></div>
       <SiteFooter />
     </div>
   );
