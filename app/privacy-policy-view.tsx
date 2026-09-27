@@ -14,7 +14,7 @@ const policies: Record<"strengthplan" | "daybound", {
 }> = {
   strengthplan: {
     product: "StrengthPlan",
-    updated: "Last updated August 27, 2026",
+    updated: "Last updated September 26, 2026",
     introduction: "This policy describes the information StrengthPlan collects, why it is used, where it is stored, and the choices available to users.",
     sections: [
       {
@@ -23,7 +23,7 @@ const policies: Record<"strengthplan" | "daybound", {
           "Account information: the name and email address you choose to provide, linked sign-in methods, and unique account identifier used to authenticate and separate your data from other users’ data. Sign in with Apple lets you share an Apple private-relay address instead of your personal email address.",
           "Workout information: workout-library entries, workout plans, sets, repetitions, entered weights, completion status, cardio plans and result summaries, interval segments, timers, notes, settings, and workout history that you choose to enter.",
           "Apple Health is optional. With permission, StrengthPlan can read workout measurements you choose to share and save strength, interval, and cardio workouts tracked through HealthKit-compatible devices and sensors. Raw HealthKit samples, heart-rate series, device identifiers, and route coordinates remain in Apple Health and are not uploaded to Firebase.",
-          "Coach requests include the planning preferences, available equipment, schedule choices, and exercise names required to generate a plan. StrengthPlan does not send raw HealthKit samples, routes, account credentials, or unrelated profile data to Coach.",
+          "Coach requests include the planning preferences, available equipment, schedule choices, exercise names, and workout details you submit for plan generation or regeneration. StrengthPlan does not send raw HealthKit samples, routes, account credentials, or unrelated profile data to Coach.",
           "Technical information: Firebase, Google, and Apple may process limited device, network, authentication, security, crash, and service-operation information as necessary to provide their platforms. StrengthPlan does not use this information for behavioral advertising or cross-app tracking.",
         ],
       },
@@ -38,7 +38,7 @@ const policies: Record<"strengthplan" | "daybound", {
         title: "Service providers",
         paragraphs: [
           "StrengthPlan uses Google Firebase, including Firebase Authentication and Cloud Firestore, to authenticate users and store synchronized app data. Google processes information as a service provider under its applicable terms and privacy commitments.",
-          "Coach sends the minimum planning prompt to an authenticated, App Check-protected Firebase callable service. The service confirms StrengthPlan+ access, applies a per-account quota, and contacts Google’s generative-model service using a server-side credential. StrengthPlan validates the returned plan on your device, and only a plan you accept is saved to your StrengthPlan account. Provider credentials are not included in the app.",
+          "Coach sends the planning inputs you submit through an authenticated, App Check-protected Firebase callable service to OpenAI, which provides the GPT-6 Astra language model. The service verifies StrengthPlan+ access and applies a per-account quota. StrengthPlan disables OpenAI Responses API storage, although provider security and abuse-monitoring retention may still apply. Apple-signed purchase evidence is sent to StrengthPlan’s backend to verify access; it is not sent to OpenAI. StrengthPlan validates the returned plan on your device, and only a plan you accept is saved to your StrengthPlan account. Provider credentials are not included in the app.",
           "Apple processes information associated with App Store distribution, device services, operating-system features, crash reporting when enabled by the user, and other Apple platform functions. These providers may process data in countries other than the user’s country.",
         ],
       },
